@@ -69,3 +69,10 @@ a{
     color: black; 
     font-weight: bold;  
 }
+
+.form > button{
+    background: #1a41ac;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +12,20 @@
         <form id="formularioUsuario" class="form" action="">
 
             <label for="">Nombre</label>
-            <input type="text" id="nombre">
+            <!-- usamos en el pattern [a-zA-Z ]+, en donde el + indica que debe haber al menos un carácter -->
+            <input type="text" id="nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]+" placeholder="José Peralta..." required>
             <label for="">Fecha de Nacimiento</label>
-            <input type="date" id="fechaNacimiento">
+            <!-- Usamos el format para poder indicar el formato de la fecha que en este caso lo tomamos como dd-mm-yyyy -->
+            <input type="date" id="fechaNacimiento" placeholder="dd-mm-yyyy" required>
+            <label for="">Edad</label>
+            <input type="number" id="edad" value="0" readonly>
             <label for="">Correo</label>
-            <input type="email" id="correo">
+            <!-- la validación del correo se realiza mediante el pattern que verifica el formato -->
+            <input type="email" id="correo" 
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="correo@dominio.com" required>
             <label for="">Número de Teléfono</label>
-            <input type="number" id="telefono" pattern="[0-9]{10}">
+            <!-- usamos en el pattern [0-9]{8}, en donde el 8 indica que debe tener 8 dígitos -->
+            <input type="number" id="telefono" pattern="[0-9]{8}" placeholder="12345678" required>
 
             <button type="submit">Crear</button>
 
@@ -27,4 +34,5 @@
     </div>
 
 </body>
+<script src="script.js"></script>
 </html>
